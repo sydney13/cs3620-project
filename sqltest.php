@@ -1,7 +1,7 @@
 <?php
 $servername = "cs3620.mysql.database.azure.com";
 $username = "sydneysorensen@cs3620";
-$password = "Volleyball13!";
+$password = "Password";
 $dbname = "cs3620_proj";
 
 // Create connection
@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 }
 
 $sql = "INSERT INTO shows (showid, showtitle)
-VALUES (4, 'The Office')";
+VALUES (5, 'The Office')";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
