@@ -35,15 +35,14 @@ if ($conn->query($sql) === TRUE) {
 }
 
 if ($conn->query($sql) === TRUE) {
-    echo  "Record deleted successfully";
+    echo  "<br> Record deleted successfully";
   } else {
     echo "Error deleting record: " . $conn->error;
   }
 
-  if ($result->num_rows > 0) {
-    // output data of each row
+if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-      echo "id: " . $row["bookid"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+      echo "id: " . $row["bookid"]. " - Name: " . $row["bookid"]. " " . $row["booktitle"]. "<br>";
     }
   } else {
     echo "0 results";
