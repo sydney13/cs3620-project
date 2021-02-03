@@ -14,7 +14,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "INSERT INTO book (bookid, booktitle)
+$sql = "INSERT INTO books (bookid, booktitle)
 VALUES (1, 'Harry Potter')";
 
 if ($conn->query($sql) === TRUE) {
