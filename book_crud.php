@@ -21,12 +21,12 @@ $sql = "INSERT INTO books (bookid, booktitle)
 VALUES (2, 'Night')";
 
 $sql = "INSERT INTO books (bookid, booktitle)
-VALUES (3, 'Girl, Stop Apologizing')";
+VALUES (2, 'Girl, Stop Apologizing')";
 
 $sql = "SELECT id, bookid, booktitle FROM books";
 $result = $conn->query($sql);
 
-$sql = "DELETE FROM books WHERE id=2";
+$sql = "DELETE FROM books WHERE id=1";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
