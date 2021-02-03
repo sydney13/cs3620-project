@@ -15,13 +15,13 @@ if ($conn->connect_error) {
 }
 
 $sql = "INSERT INTO books (bookid, booktitle)
-VALUES (2, 'Night')";
+VALUES (3, 'Night')";
 
 $sql = "INSERT INTO books (bookid, booktitle)
-VALUES (1, 'Harry Potter')";
+VALUES (2, 'Harry Potter')";
 
 $sql = "INSERT INTO books (bookid, booktitle)
-VALUES (3, 'The Girl')";
+VALUES (1, 'The Girl')";
 
 $sql = "SELECT id, bookid, booktitle FROM books";
 $result = $conn->query($sql);
