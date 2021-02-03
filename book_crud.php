@@ -15,7 +15,13 @@ if ($conn->connect_error) {
 }
 
 $sql = "INSERT INTO books (bookid, booktitle)
-VALUES (1, 'Night')";
+VALUES (2, 'Night')";
+
+$sql = "INSERT INTO books (bookid, booktitle)
+VALUES (1, 'Harry Potter')";
+
+$sql = "INSERT INTO books (bookid, booktitle)
+VALUES (3, 'The Girl')";
 
 $sql = "SELECT id, bookid, booktitle FROM books";
 $result = $conn->query($sql);
@@ -29,7 +35,7 @@ if ($conn->query($sql) === TRUE) {
 }
 
 if ($conn->query($sql) === TRUE) {
-    echo  "<br> Record deleted successfully";
+    echo  "Record deleted successfully";
   } else {
     echo "Error deleting record: " . $conn->error;
   }
