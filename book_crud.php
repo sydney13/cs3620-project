@@ -43,7 +43,7 @@ if ($conn->query($sql) === TRUE) {
   if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-      echo "<br> id: " . $row["id"]. " - Name: " . $row["bookid"]. " " . $row["booktitle"]. "<br>";
+      echo "id: " . $row["id"]. " - Name: " . $row["bookid"]. " " . $row["booktitle"]. "<br>";
     }
   } else {
     echo "0 results";
