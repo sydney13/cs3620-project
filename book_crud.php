@@ -20,6 +20,7 @@ VALUES (1, 'Harry Potter')";
 $sql = "SELECT id, bookid, booktitle FROM books";
 $result = $conn->query($sql);
 
+$sql = "DELETE FROM books WHERE id=1";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
