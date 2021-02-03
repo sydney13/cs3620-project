@@ -18,10 +18,10 @@ $sql = "INSERT INTO books (bookid, booktitle)
 VALUES (1, 'Harry Potter')";
 
 $sql = "INSERT INTO books (bookid, booktitle)
-VALUES (2, 'Night')";
+VALUES (2, 'Harry Potter')";
 
 $sql = "INSERT INTO books (bookid, booktitle)
-VALUES (3, 'Girl, Stop Apologizing')";
+VALUES (3, 'Harry Potter')";
 
 $sql = "SELECT id, bookid, booktitle FROM books";
 $result = $conn->query($sql);
