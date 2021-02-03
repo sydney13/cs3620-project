@@ -17,6 +17,10 @@ if ($conn->connect_error) {
 $sql = "INSERT INTO books (bookid, booktitle)
 VALUES (1, 'Harry Potter')";
 
+$sql = "SELECT id, bookid, booktitle FROM books";
+$result = $conn->query($sql);
+
+
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
 } else {
