@@ -21,7 +21,7 @@ $sql = "INSERT INTO books (bookid, booktitle)
 VALUES (2, 'Night')";
 
 $sql = "INSERT INTO books (bookid, booktitle)
-VALUES (2, 'Girl, Stop Apologizing')";
+VALUES (3, 'Girl, Stop Apologizing')";
 
 $sql = "SELECT id, bookid, booktitle FROM books";
 $result = $conn->query($sql);
