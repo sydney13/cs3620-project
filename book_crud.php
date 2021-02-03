@@ -26,7 +26,7 @@ VALUES (3, 'Girl, Stop Apologizing')";
 $sql = "SELECT id, bookid, booktitle FROM books";
 $result = $conn->query($sql);
 
-$sql = "DELETE FROM books WHERE id=1";
+$sql = "DELETE FROM books WHERE id=2";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
@@ -35,7 +35,7 @@ if ($conn->query($sql) === TRUE) {
 }
 
 if ($conn->query($sql) === TRUE) {
-    echo "Record deleted successfully";
+    echo  "<br> Record deleted successfully";
   } else {
     echo "Error deleting record: " . $conn->error;
   }
@@ -43,7 +43,7 @@ if ($conn->query($sql) === TRUE) {
   if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-      echo "id: " . $row["id"]. " - Name: " . $row["bookid"]. " " . $row["booktitle"]. "<br>";
+      echo "<br> id: " . $row["id"]. " - Name: " . $row["bookid"]. " " . $row["booktitle"]. "<br>";
     }
   } else {
     echo "0 results";
