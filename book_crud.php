@@ -17,10 +17,10 @@ if ($conn->connect_error) {
 $sql = "INSERT INTO books (bookid, booktitle)
 VALUES (1, 'Harry Potter')";
 
-$sql = "SELECT id, bookid, booktitle FROM books";
+$sql = "SELECT bookid, bookid, booktitle FROM books";
 $result = $conn->query($sql);
 
-$sql = "DELETE FROM books WHERE id=1";
+$sql = "DELETE FROM books WHERE bookid=1";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
@@ -37,7 +37,7 @@ if ($conn->query($sql) === TRUE) {
   if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-      echo "id: " . $row["id"]. " - Name: " . $row["bookid"]. " " . $row["booktitle"]. "<br>";
+      echo "bookid: " . $row["bookid"]. " - Name: " . $row["bookid"]. " " . $row["booktitle"]. "<br>";
     }
   } else {
     echo "0 results";
