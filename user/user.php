@@ -1,18 +1,27 @@
 <?php
+    require_once('./user/userDAO.php');
 
     class User {
 
-        public function getUser($user_id){
+        private $username;
+        private $user_id;
 
+        public function getUser($user_id){
+            $this->user_id = $user_id;
+
+            $userDAO = new $this->userDAO();
+            $userDAO->getUser($this);
+
+            return $this;
         }
         public function getUsername(){
-            return "SydneyWilkes22";
+            return $this->username;
         }
-        public function getFirstName(){
-            return "Sydney";
+        public function setUsername($username){
+            $this->username = $username;
         }
-        public function getLastName(){
-            return "Wilkes";
+        public function getUserId(){
+            return $this->user_id;
         }
     }
 
