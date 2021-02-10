@@ -36,6 +36,12 @@ class User {
   function setLastName($last_name){
     $this->last_name = $last_name;
   }
+  function getPassword() {
+    return $this->password;
+  }
+  function setPassword($password){
+    $this->last_name = $password;
+  }
 
   function getUser($user_id){
     $this->user_id = $user_id;
