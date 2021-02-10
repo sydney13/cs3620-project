@@ -37,7 +37,10 @@ class User {
     $this->last_name = $last_name;
   }
   function setPassword($password){
-    $this->last_name = $password;
+    $this->password = hash("sha256", $password);
+  }
+  function getPassword(){
+    return $this->password;
   }
 
   function getUser($user_id){
@@ -45,6 +48,11 @@ class User {
     $userDAO = new userDAO();
     $userDAO->getUser($this);
     return $this;
+  }
+
+  function createUser(){
+    $userDAO = new userDAO();
+    $userDAO->createUser($this);
   }
 }
 ?>
