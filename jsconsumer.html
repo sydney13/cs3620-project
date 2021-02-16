@@ -2,7 +2,7 @@
 
 <script>
 
-function hello(userid){
+    function hello(userid){
         fetch('http://localhost:8080/project/users.php?id=' + userid)
         .then(response => response.json())
         .then(
@@ -20,51 +20,60 @@ function hello(userid){
                 document.getElementById("userName").innerHTML = "";
         });
     }
-
-    function DisplayUserName(userName){
-        fetch('http://localhost:8080/project/users.php?id=' + userName)
+    function firstName(first_name){
+        fetch('http://localhost:8080/project/users.php?id=' + first_name)
         .then(response => response.json())
         .then(
 
             function (data){
+                document.getElementById("firstName").innerHTML = data.first_name;
+                document.getElementById("lastName").innerHTML = data.last_name;
                 document.getElementById("userName").innerHTML = data.username;
             }
 
         ).catch((error) => {
             alert("That user does not yet exist")
+            document.getElementById("firstName").innerHTML = "";
+                document.getElementById("lastName").innerHTML = "";
                 document.getElementById("userName").innerHTML = "";
         });
     }
-    function DisplayFirstName(FirstName){
-        fetch('http://localhost:8080/project/users.php?id=' + FirstName)
+    function lastName(last_name){
+        fetch('http://localhost:8080/project/users.php?id=' + last_name)
         .then(response => response.json())
         .then(
 
             function (data){
-                document.getElementById("FirstName").innerHTML = data.FirstName;
+                document.getElementById("firstName").innerHTML = data.first_name;
+                document.getElementById("lastName").innerHTML = data.last_name;
+                document.getElementById("userName").innerHTML = data.username;
             }
 
         ).catch((error) => {
             alert("That user does not yet exist")
-            document.getElementById("FirstName").innerHTML = "";
+            document.getElementById("firstName").innerHTML = "";
+                document.getElementById("lastName").innerHTML = "";
+                document.getElementById("userName").innerHTML = "";
         });
     }
-    function DisplayLastName(LastName){
-        fetch('http://localhost:8080/project/users.php?id=' + LastName)
+    function UserName(userName){
+        fetch('http://localhost:8080/project/users.php?id=' + userName)
         .then(response => response.json())
         .then(
 
             function (data){
-                document.getElementById("LastName").innerHTML = data.LastName;
+                document.getElementById("firstName").innerHTML = data.first_name;
+                document.getElementById("lastName").innerHTML = data.last_name;
+                document.getElementById("userName").innerHTML = data.username;
             }
 
         ).catch((error) => {
             alert("That user does not yet exist")
-                document.getElementById("LastName").innerHTML = "";
+            document.getElementById("firstName").innerHTML = "";
+                document.getElementById("lastName").innerHTML = "";
+                document.getElementById("userName").innerHTML = "";
         });
     }
-
-
 </script>
 
 Userid: <input type="text" id="theUserId" />
@@ -80,6 +89,6 @@ LastName: <input type="text" id="LastName" />
 <input type="button" value="Get Last Name" onclick="hello(document.getElementById('LastName').value);" />
 
 
-<div id="FirstName"></div>
-<div id="LastName"></div>
+<div id="first_name"></div>
+<div id="last_name"></div>
 <div id="userName"></div>
