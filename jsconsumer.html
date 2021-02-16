@@ -1,29 +1,63 @@
-<h2 id="header1"></h2>
-<div id="firstName"></div>
-<div id="lastName"></div>
-<div id="username"></div>
-Userid: <input type="text" id="theUserId">
-<input type="button" value="Click Me" onclick="hello(document.getElementById('theUserId')).value;">
-
+<h1 id="header1"></h1>
 
 <script>
-    function hello(){
-        fetch('http://localhost:8080/project/user.php?id=2')
-            .then(response => response.json())
-            .then(
 
-                function (data){
-                    document.getElementById("firstName").innerHTML = data.first_name;
-                    document.getElementById("lastName").innerHTML = data.last_name;
-                    document.getElementById("username").innerHTML = data.username;
-                }
+    function DisplayUserName(userName){
+        fetch('http://localhost:8080/project/users.php?id=' + userName)
+        .then(response => response.json())
+        .then(
 
-            );
+            function (data){
+                document.getElementById("userName").innerHTML = data.username;
+            }
+
+        ).catch((error) => {
+            alert("That user does not yet exist")
+                document.getElementById("userName").innerHTML = "";
+        });
     }
+    function DisplayFirstName(FirstName){
+        fetch('http://localhost:8080/project/users.php?id=' + first_name)
+        .then(response => response.json())
+        .then(
+
+            function (data){
+                document.getElementById("FirstName").innerHTML = data.first_name;
+            }
+
+        ).catch((error) => {
+            alert("That user does not yet exist")
+            document.getElementById("FirstName").innerHTML = "";
+        });
+    }
+    function DisplayLastName(LastName){
+        fetch('http://localhost:8080/project/users.php?id=' + last_name)
+        .then(response => response.json())
+        .then(
+
+            function (data){
+                document.getElementById("LastName").innerHTML = data.last_name;
+            }
+
+        ).catch((error) => {
+            alert("That user does not yet exist")
+                document.getElementById("LastName").innerHTML = "";
+        });
+    }
+
+
 </script>
 
+userName: <input type="text" id="userName" />
+<input type="button" value="Get User" onclick="hello(document.getElementById('userName').value);" />
+
+FirstName: <input type="text" id="FirstName" />
+<input type="button" value="Get User" onclick="hello(document.getElementById('FirstName').value);" />
+
+LastName: <input type="text" id="LastName" />
+<input type="button" value="Get User" onclick="hello(document.getElementById('LastName').value);" />
 
 
-
-
-
+<div id="FirstName"></div>
+<div id="LastName"></div>
+<div id="userName"></div>
