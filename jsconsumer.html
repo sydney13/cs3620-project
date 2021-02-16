@@ -1,5 +1,23 @@
 <h1 id="header1"></h1>
 
+Userid: <input type="text" id="theUserId" />
+<input type="button" value="Get User" onclick="hello(document.getElementById('theUserId').value);" />
+<br>
+userName: <input type="text" id="theUserName" />
+<input type="button" value="Get User Name" onclick="UserName(document.getElementById('theUserName').value);" />
+<br>
+firstName: <input type="text" id="theFirstName" />
+<input type="button" value="Get First Name" onclick="firstName(document.getElementById('theFirstName').value);" />
+<br>
+lastName: <input type="text" id="theLastName" />
+<input type="button" value="Get Last Name" onclick="lastName(document.getElementById('theLastName').value);" />
+
+
+<div id="first_name"></div>
+<div id="last_name"></div>
+<div id="userName"></div>
+
+
 <script>
 
     function hello(userid){
@@ -75,20 +93,3 @@
         });
     }
 </script>
-
-Userid: <input type="text" id="theUserId" />
-<input type="button" value="Get User" onclick="hello(document.getElementById('theUserId').value);" />
-<br>
-userName: <input type="text" id="username" />
-<input type="button" value="Get User Name" onclick="userName(document.getElementById('userName').value);" />
-<br>
-firstName: <input type="text" id="first_name" />
-<input type="button" value="Get First Name" onclick="firstName(document.getElementById('first_name').value);" />
-<br>
-lastName: <input type="text" id="last_name" />
-<input type="button" value="Get Last Name" onclick="lastName(document.getElementById('last_name').value);" />
-
-
-<div id="first_name"></div>
-<div id="last_name"></div>
-<div id="userName"></div>
