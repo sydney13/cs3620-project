@@ -2,6 +2,25 @@
 
 <script>
 
+function hello(userid){
+        fetch('http://localhost:8080/project/users.php?id=' + userid)
+        .then(response => response.json())
+        .then(
+
+            function (data){
+                document.getElementById("firstName").innerHTML = data.first_name;
+                document.getElementById("lastName").innerHTML = data.last_name;
+                document.getElementById("userName").innerHTML = data.username;
+            }
+
+        ).catch((error) => {
+            alert("That user does not yet exist")
+            document.getElementById("firstName").innerHTML = "";
+                document.getElementById("lastName").innerHTML = "";
+                document.getElementById("userName").innerHTML = "";
+        });
+    }
+
     function DisplayUserName(userName){
         fetch('http://localhost:8080/project/users.php?id=' + userName)
         .then(response => response.json())
@@ -48,14 +67,17 @@
 
 </script>
 
+Userid: <input type="text" id="theUserId" />
+<input type="button" value="Get User" onclick="hello(document.getElementById('theUserId').value);" />
+
 userName: <input type="text" id="userName" />
 <input type="button" value="Get User" onclick="hello(document.getElementById('userName').value);" />
 <br>
 FirstName: <input type="text" id="FirstName" />
-<input type="button" value="Get User" onclick="hello(document.getElementById('FirstName').value);" />
+<input type="button" value="Get First Name" onclick="hello(document.getElementById('FirstName').value);" />
 <br>
 LastName: <input type="text" id="LastName" />
-<input type="button" value="Get User" onclick="hello(document.getElementById('LastName').value);" />
+<input type="button" value="Get Last Name" onclick="hello(document.getElementById('LastName').value);" />
 
 
 <div id="FirstName"></div>
