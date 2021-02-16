@@ -36,12 +36,12 @@ function hello(userid){
         });
     }
     function DisplayFirstName(FirstName){
-        fetch('http://localhost:8080/project/users.php?id=' + first_name)
+        fetch('http://localhost:8080/project/users.php?id=' + FirstName)
         .then(response => response.json())
         .then(
 
             function (data){
-                document.getElementById("FirstName").innerHTML = data.first_name;
+                document.getElementById("FirstName").innerHTML = data.FirstName;
             }
 
         ).catch((error) => {
@@ -50,12 +50,12 @@ function hello(userid){
         });
     }
     function DisplayLastName(LastName){
-        fetch('http://localhost:8080/project/users.php?id=' + last_name)
+        fetch('http://localhost:8080/project/users.php?id=' + LastName)
         .then(response => response.json())
         .then(
 
             function (data){
-                document.getElementById("LastName").innerHTML = data.last_name;
+                document.getElementById("LastName").innerHTML = data.LastName;
             }
 
         ).catch((error) => {
