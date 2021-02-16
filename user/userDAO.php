@@ -3,15 +3,15 @@ class UserDAO {
   function getUser($user){
     require_once('./utilities/connection.php');
     
-    $sql = "SELECT first_name, last_name, username, user_id FROM user WHERE user_id =" . $user->getUserId();
+    $sql = "SELECT FirstName, LastName, userName, user_id FROM user WHERE user_id =" . $user->getUserId();
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        $user->setFirstName($row["first_name"]);
-        $user->setLastName($row["last_name"]);
-        $user->setUsername($row["username"]);
+        $user->setFirstName($row["FirstName"]);
+        $user->setLastName($row["LastName"]);
+        $user->setUsername($row["userName"]);
     }
     } else {
         echo "0 results";
@@ -26,10 +26,10 @@ class UserDAO {
     
     $sql = "INSERT INTO cs3620_proj.user
     (
-    `username`,
+    `userName`,
     `password`,
-    `first_name`,
-    `last_name`)
+    `FirstName`,
+    `LastName`)
     VALUES
     ('" . $user->getUsername() . "',
     '" . $user->getPassword() . "',
