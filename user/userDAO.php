@@ -4,6 +4,9 @@ class UserDAO {
     require_once('./utilities/connection.php');
     
     $sql = "SELECT first_name, last_name, username, user_id FROM user WHERE user_id =" . $user->getUserId();
+    $sql = "SELECT first_name, last_name, username, user_id FROM user WHERE username ='" . $user->getUserId() . "'";
+    $sql = "SELECT first_name, last_name, username, user_id FROM user WHERE last_name ='" . $user->getUserId() . "'";
+    $sql = "SELECT first_name, last_name, username, user_id FROM user WHERE first_name ='" . $user->getUserId() . "'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -20,6 +23,8 @@ class UserDAO {
   }
 
   function createUser($user){
+
+
     require_once('./utilities/connection.php');
     
     $sql = "INSERT INTO cs3620_proj.user
@@ -34,14 +39,11 @@ class UserDAO {
     '" . $user->getFirstName() . "',
     '" . $user->getLastName() . "'
     );";
-
-    if ($conn->query($sql) === TRUE) {
-      echo "user created";
-    } else {
-      echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+    $result = $conn->query($sql);
 
     $conn->close();
+
+    echo "user created";
   }
 
   function deleteUser($un){
@@ -49,13 +51,11 @@ class UserDAO {
     
     $sql = "DELETE FROM cs3620_proj.user WHERE username = '" . $un . "';";
 
-    if ($conn->query($sql) === TRUE) {
-      echo "user deleted";
-    } else {
-      echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+    $result = $conn->query($sql);
 
     $conn->close();
+
+    echo "user deleted";
   }
 }
 ?>
