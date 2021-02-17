@@ -21,7 +21,7 @@ lastName: <input type="text" id="theLastName" />
 <script>
 
     function hello(userid){
-        fetch('http://localhost:8080/project/users.php?id=' + userid)
+        fetch('users.php?id=' + userid)
         .then(response => response.json())
         .then(
 
@@ -39,7 +39,7 @@ lastName: <input type="text" id="theLastName" />
         });
     }
     function firstName(first_name){
-        fetch('http://localhost:8080/project/users.php?id=' + first_name)
+        fetch('users.php?id=' + first_name)
         .then(response => response.json())
         .then(
 
@@ -57,7 +57,7 @@ lastName: <input type="text" id="theLastName" />
         });
     }
     function lastName(last_name){
-        fetch('http://localhost:8080/project/users.php?id=' + last_name)
+        fetch('users.php?id=' + last_name)
         .then(response => response.json())
         .then(
 
@@ -75,7 +75,7 @@ lastName: <input type="text" id="theLastName" />
         });
     }
     function UserName(userName){
-        fetch('http://localhost:8080/project/users.php?id=' + userName)
+        fetch('users.php?id=' + userName)
         .then(response => response.json())
         .then(
 
