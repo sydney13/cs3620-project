@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 session_start();
 
-$_SESSION['SQLPW'] = "sydneysorensen@cs3620";
-$_SESSION['SQLUSER'] = "Volleyball13!";
+$_SESSION['SQLPW'] = "Volleyball13!";
+$_SESSION['SQLUSER'] = "sydneysorensen@cs3620";
 
 ?>
