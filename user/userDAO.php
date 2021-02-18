@@ -41,6 +41,7 @@ class UserDAO {
     $conn->close();
   }
 
+  
   function getTheFirstName($user){
     require_once('./utilities/connection.php');
     
@@ -59,6 +60,7 @@ class UserDAO {
     }
     $conn->close();
   }
+
 
   function getTheLastName($user){
     require_once('./utilities/connection.php');
@@ -79,8 +81,8 @@ class UserDAO {
     $conn->close();
   }
 
-  function createUser($user){
 
+  function createUser($user){
 
     require_once('./utilities/connection.php');
     

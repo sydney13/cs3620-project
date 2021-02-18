@@ -1,16 +1,16 @@
 <h1 id="header1"></h1>
 
-Userid: <input type="text" id="theUserId" />
+Userid: <input type="text" id="UserId" />
 <input type="button" value="Get User" onclick="hello(document.getElementById('theUserId').value);" />
 <br>
-userName: <input type="text" id="theUserName" />
-<input type="button" value="Get User" onclick="UserName(document.getElementById('theUserName').value);" />
+userName: <input type="text" id="getUserName" />
+<input type="button" value="Get User" onclick="TheUserName(document.getElementById('getUserName').value);" />
 <br>
-firstName: <input type="text" id="theFirstName" />
-<input type="button" value="Get User" onclick="firstName(document.getElementById('theFirstName').value);" />
+firstName: <input type="text" id="getFirstName" />
+<input type="button" value="Get User" onclick="TheFirstName(document.getElementById('getFirstName').value);" />
 <br>
-lastName: <input type="text" id="theLastName" />
-<input type="button" value="Get User" onclick="lastName(document.getElementById('theLastName').value);" />
+lastName: <input type="text" id="getLastName" />
+<input type="button" value="Get User" onclick="TheLastName(document.getElementById('getLastName').value);" />
 
 
 <div id="firstName"></div>
@@ -38,7 +38,7 @@ lastName: <input type="text" id="theLastName" />
                 document.getElementById("userName").innerHTML = "";
         });
     }
-    function firstName(first_name){
+    function TheFirstName(first_name){
         fetch('users.php?first_name=' + first_name)
         .then(response => response.json())
         .then(
@@ -56,7 +56,7 @@ lastName: <input type="text" id="theLastName" />
                 document.getElementById("userName").innerHTML = "";
         });
     }
-    function lastName(last_name){
+    function TheLastName(last_name){
         fetch('users.php?last_name=' + last_name)
         .then(response => response.json())
         .then(
@@ -74,7 +74,7 @@ lastName: <input type="text" id="theLastName" />
                 document.getElementById("userName").innerHTML = "";
         });
     }
-    function UserName(userName){
+    function TheUserName(userName){
         fetch('users.php?username=' + userName)
         .then(response => response.json())
         .then(
