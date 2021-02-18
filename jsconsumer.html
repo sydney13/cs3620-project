@@ -13,8 +13,8 @@ lastName: <input type="text" id="theLastName" />
 <input type="button" value="Get User" onclick="lastName(document.getElementById('theLastName').value);" />
 
 
-<div id="first_name"></div>
-<div id="last_name"></div>
+<div id="firstName"></div>
+<div id="lastName"></div>
 <div id="userName"></div>
 
 
@@ -39,7 +39,7 @@ lastName: <input type="text" id="theLastName" />
         });
     }
     function firstName(first_name){
-        fetch('users.php?id=' + first_name)
+        fetch('users.php?first_name=' + first_name)
         .then(response => response.json())
         .then(
 
@@ -57,7 +57,7 @@ lastName: <input type="text" id="theLastName" />
         });
     }
     function lastName(last_name){
-        fetch('users.php?id=' + last_name)
+        fetch('users.php?last_name=' + last_name)
         .then(response => response.json())
         .then(
 
@@ -75,7 +75,7 @@ lastName: <input type="text" id="theLastName" />
         });
     }
     function UserName(userName){
-        fetch('users.php?id=' + userName)
+        fetch('users.php?username=' + userName)
         .then(response => response.json())
         .then(
 

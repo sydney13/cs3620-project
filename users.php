@@ -8,7 +8,19 @@
    require_once('./user/user.php');
 
     $user = new user();
-    $user->getUser($_GET["id"]);
+    
+    if(isset($_GET["id"])){
+        $user->getUser($_GET["id"]);
+    }
+    if(isset($_GET["username"])){
+        $user->getTheUserName($_GET["username"]);
+    }
+    if(isset($_GET["first_name"])){
+        $user->getTheFirstName($_GET["first_name"]);
+    }
+    if(isset($_GET["last_name"])){
+        $user->getTheLastName($_GET["last_name"]);
+    }
 
     echo json_encode($user);
 ?>

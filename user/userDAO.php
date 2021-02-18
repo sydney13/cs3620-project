@@ -4,9 +4,66 @@ class UserDAO {
     require_once('./utilities/connection.php');
     
     $sql = "SELECT first_name, last_name, username, user_id FROM user WHERE user_id =" . $user->getUserId();
-    $sql = "SELECT first_name, last_name, username, user_id FROM user WHERE username ='" . $user->getUserId() . "'";
-    $sql = "SELECT first_name, last_name, username, user_id FROM user WHERE last_name ='" . $user->getUserId() . "'";
-    $sql = "SELECT first_name, last_name, username, user_id FROM user WHERE first_name ='" . $user->getUserId() . "'";
+    // $sql = "SELECT first_name, last_name, username, user_id FROM user WHERE username ='" . $user->getUserId() . "'";
+    // $sql = "SELECT first_name, last_name, username, user_id FROM user WHERE last_name ='" . $user->getUserId() . "'";
+    // $sql = "SELECT first_name, last_name, username, user_id FROM user WHERE first_name ='" . $user->getUserId() . "'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        $user->setFirstName($row["first_name"]);
+        $user->setLastName($row["last_name"]);
+        $user->setUsername($row["username"]);
+    }
+    } else {
+        echo "0 results";
+    }
+    $conn->close();
+  }
+
+  function getTheUserName($user){
+    require_once('./utilities/connection.php');
+    
+    $sql = "SELECT first_name, last_name, username, username FROM user WHERE username = \" " . $user->getTheUserName() . "\"";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        $user->setFirstName($row["first_name"]);
+        $user->setLastName($row["last_name"]);
+        $user->setUsername($row["username"]);
+    }
+    } else {
+        echo "0 results";
+    }
+    $conn->close();
+  }
+
+  function getTheFirstName($user){
+    require_once('./utilities/connection.php');
+    
+    $sql = "SELECT first_name, last_name, username, first_name FROM user WHERE first_name = \" " . $user->getTheFirstName() . "\"";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        $user->setFirstName($row["first_name"]);
+        $user->setLastName($row["last_name"]);
+        $user->setUsername($row["username"]);
+    }
+    } else {
+        echo "0 results";
+    }
+    $conn->close();
+  }
+
+  function getTheLastName($user){
+    require_once('./utilities/connection.php');
+    
+    $sql = "SELECT first_name, last_name, username, last_name FROM user WHERE last_name = \" " . $user->getTheLastName() . "\"";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
