@@ -25,7 +25,7 @@ class UserDAO {
   function getTheUserName($user){
     require_once('./utilities/connection.php');
     
-    $sql = "SELECT first_name, last_name, username, username FROM user WHERE username = \" " . $user->getTheUserName() . "\"";
+    $sql = "SELECT first_name, last_name, username, username FROM user WHERE username = '" . $user->getTheUserName() . "'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -41,11 +41,11 @@ class UserDAO {
     $conn->close();
   }
 
-  
+
   function getTheFirstName($user){
     require_once('./utilities/connection.php');
     
-    $sql = "SELECT first_name, last_name, username, first_name FROM user WHERE first_name = \" " . $user->getTheFirstName() . "\"";
+    $sql = "SELECT first_name, last_name, username, first_name FROM user WHERE first_name = '" . $user->getTheFirstName() . "'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -65,7 +65,7 @@ class UserDAO {
   function getTheLastName($user){
     require_once('./utilities/connection.php');
     
-    $sql = "SELECT first_name, last_name, username, last_name FROM user WHERE last_name = \" " . $user->getTheLastName() . "\"";
+    $sql = "SELECT first_name, last_name, username, last_name FROM user WHERE last_name = '" . $user->getTheLastName() . "'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
