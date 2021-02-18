@@ -13,9 +13,9 @@ lastName: <input type="text" id="LastName" />
 <input type="button" value="Get User" onclick="TheLastName(document.getElementById('LastName').value);" />
 
 
-<div id="firstName"></div>
-<div id="lastName"></div>
-<div id="userName"></div>
+<div id="firstname"></div>
+<div id="lastname"></div>
+<div id="username"></div>
 
 
 <script>
@@ -26,16 +26,16 @@ lastName: <input type="text" id="LastName" />
         .then(
 
             function (data){
-                document.getElementById("firstName").innerHTML = data.first_name;
-                document.getElementById("lastName").innerHTML = data.last_name;
-                document.getElementById("userName").innerHTML = data.username;
+                document.getElementById("firstname").innerHTML = data.first_name;
+                document.getElementById("lastname").innerHTML = data.last_name;
+                document.getElementById("username").innerHTML = data.username;
             }
 
         ).catch((error) => {
             alert("That user does not yet exist")
-                document.getElementById("firstName").innerHTML = "";
-                document.getElementById("lastName").innerHTML = "";
-                document.getElementById("userName").innerHTML = "";
+                document.getElementById("firstname").innerHTML = "";
+                document.getElementById("lastname").innerHTML = "";
+                document.getElementById("username").innerHTML = "";
         });
     }
     function TheFirstName(first_name){
@@ -44,16 +44,16 @@ lastName: <input type="text" id="LastName" />
         .then(
 
             function (data){
-                document.getElementById("firstName").innerHTML = data.first_name;
-                document.getElementById("lastName").innerHTML = data.last_name;
-                document.getElementById("userName").innerHTML = data.username;
+                document.getElementById("firstname").innerHTML = data.first_name;
+                document.getElementById("lastname").innerHTML = data.last_name;
+                document.getElementById("username").innerHTML = data.username;
             }
 
         ).catch((error) => {
             alert("That user does not yet exist")
-            document.getElementById("firstName").innerHTML = "";
-                document.getElementById("lastName").innerHTML = "";
-                document.getElementById("userName").innerHTML = "";
+            document.getElementById("firstname").innerHTML = "";
+                document.getElementById("lastname").innerHTML = "";
+                document.getElementById("username").innerHTML = "";
         });
     }
     function TheLastName(last_name){
@@ -62,34 +62,34 @@ lastName: <input type="text" id="LastName" />
         .then(
 
             function (data){
-                document.getElementById("firstName").innerHTML = data.first_name;
-                document.getElementById("lastName").innerHTML = data.last_name;
-                document.getElementById("userName").innerHTML = data.username;
+                document.getElementById("firstname").innerHTML = data.first_name;
+                document.getElementById("lastname").innerHTML = data.last_name;
+                document.getElementById("username").innerHTML = data.username;
             }
 
         ).catch((error) => {
             alert("That user does not yet exist")
-            document.getElementById("firstName").innerHTML = "";
-                document.getElementById("lastName").innerHTML = "";
-                document.getElementById("userName").innerHTML = "";
+            document.getElementById("firstname").innerHTML = "";
+                document.getElementById("lastname").innerHTML = "";
+                document.getElementById("username").innerHTML = "";
         });
     }
-    function TheUserName(userName){
-        fetch('users.php?username=' + userName)
+    function TheUserName(username){
+        fetch('users.php?username=' + username)
         .then(response => response.json())
         .then(
 
             function (data){
-                document.getElementById("firstName").innerHTML = data.first_name;
-                document.getElementById("lastName").innerHTML = data.last_name;
-                document.getElementById("userName").innerHTML = data.username;
+                document.getElementById("firstname").innerHTML = data.first_name;
+                document.getElementById("lastname").innerHTML = data.last_name;
+                document.getElementById("username").innerHTML = data.username;
             }
 
         ).catch((error) => {
             alert("That user does not yet exist")
-            document.getElementById("firstName").innerHTML = "";
-                document.getElementById("lastName").innerHTML = "";
-                document.getElementById("userName").innerHTML = "";
+            document.getElementById("firstname").innerHTML = "";
+                document.getElementById("lastname").innerHTML = "";
+                document.getElementById("username").innerHTML = "";
         });
     }
 </script>
