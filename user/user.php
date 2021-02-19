@@ -50,6 +50,27 @@ class User implements \JsonSerializable {
     return $this;
   }
 
+  function getTheUserName($username){
+    $this->username = $username;
+    $userDAO = new userDAO();
+    $userDAO->getTheUserName($this);
+    return $this;
+  }
+
+  function getTheFirstName($first_name){
+    $this->first_name = $first_name;
+    $userDAO = new userDAO();
+    $userDAO->getTheFirstName($this);
+    return $this;
+  }
+
+  function getTheLastName($last_name){
+    $this->last_name = $last_name;
+    $userDAO = new userDAO();
+    $userDAO->getTheLastName($this);
+    return $this;
+  }
+
   function createUser(){
     $userDAO = new userDAO();
     $userDAO->createUser($this);
@@ -58,6 +79,11 @@ class User implements \JsonSerializable {
   function deleteUser($username){
     $userDAO = new userDAO();
     $userDAO->deleteUser($username);
+  }
+
+  function checkLogin($username, $password){
+    $userDAO = new userDAO();
+    return $userDAO->checkLogin($username, $password);
   }
 
   public function jsonSerialize(){
