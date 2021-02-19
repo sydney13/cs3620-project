@@ -1,21 +1,21 @@
 <h1 id="header1"></h1>
 
-Userid: <input type="text" id="theUserId" />
-<input type="button" value="Get User" onclick="hello(document.getElementById('theUserId').value);" />
+Userid: <input type="text" id="UserId" />
+<input type="button" value="Get User" onclick="hello(document.getElementById('UserId').value);" />
 <br>
-userName: <input type="text" id="theUserName" />
-<input type="button" value="Get User" onclick="UserName(document.getElementById('theUserName').value);" />
+userName: <input type="text" id="UserName" />
+<input type="button" value="Get User" onclick="TheUserName(document.getElementById('UserName').value);" />
 <br>
-firstName: <input type="text" id="theFirstName" />
-<input type="button" value="Get User" onclick="firstName(document.getElementById('theFirstName').value);" />
+firstName: <input type="text" id="FirstName" />
+<input type="button" value="Get User" onclick="TheFirstName(document.getElementById('FirstName').value);" />
 <br>
-lastName: <input type="text" id="theLastName" />
-<input type="button" value="Get User" onclick="lastName(document.getElementById('theLastName').value);" />
+lastName: <input type="text" id="LastName" />
+<input type="button" value="Get User" onclick="TheLastName(document.getElementById('LastName').value);" />
 
 
-<div id="first_name"></div>
-<div id="last_name"></div>
-<div id="userName"></div>
+<div id="firstname"></div>
+<div id="lastname"></div>
+<div id="username"></div>
 
 
 <script>
@@ -26,70 +26,70 @@ lastName: <input type="text" id="theLastName" />
         .then(
 
             function (data){
-                document.getElementById("firstName").innerHTML = data.first_name;
-                document.getElementById("lastName").innerHTML = data.last_name;
-                document.getElementById("userName").innerHTML = data.username;
+                document.getElementById("firstname").innerHTML = data.first_name;
+                document.getElementById("lastname").innerHTML = data.last_name;
+                document.getElementById("username").innerHTML = data.username;
             }
 
         ).catch((error) => {
             alert("That user does not yet exist")
-                document.getElementById("firstName").innerHTML = "";
-                document.getElementById("lastName").innerHTML = "";
-                document.getElementById("userName").innerHTML = "";
+                document.getElementById("firstname").innerHTML = "";
+                document.getElementById("lastname").innerHTML = "";
+                document.getElementById("username").innerHTML = "";
         });
     }
-    function firstName(first_name){
-        fetch('users.php?id=' + first_name)
+    function TheFirstName(first_name){
+        fetch('users.php?first_name=' + first_name)
         .then(response => response.json())
         .then(
 
             function (data){
-                document.getElementById("firstName").innerHTML = data.first_name;
-                document.getElementById("lastName").innerHTML = data.last_name;
-                document.getElementById("userName").innerHTML = data.username;
+                document.getElementById("firstname").innerHTML = data.first_name;
+                document.getElementById("lastname").innerHTML = data.last_name;
+                document.getElementById("username").innerHTML = data.username;
             }
 
         ).catch((error) => {
             alert("That user does not yet exist")
-            document.getElementById("firstName").innerHTML = "";
-                document.getElementById("lastName").innerHTML = "";
-                document.getElementById("userName").innerHTML = "";
+            document.getElementById("firstname").innerHTML = "";
+                document.getElementById("lastname").innerHTML = "";
+                document.getElementById("username").innerHTML = "";
         });
     }
-    function lastName(last_name){
-        fetch('users.php?id=' + last_name)
+    function TheLastName(last_name){
+        fetch('users.php?last_name=' + last_name)
         .then(response => response.json())
         .then(
 
             function (data){
-                document.getElementById("firstName").innerHTML = data.first_name;
-                document.getElementById("lastName").innerHTML = data.last_name;
-                document.getElementById("userName").innerHTML = data.username;
+                document.getElementById("firstname").innerHTML = data.first_name;
+                document.getElementById("lastname").innerHTML = data.last_name;
+                document.getElementById("username").innerHTML = data.username;
             }
 
         ).catch((error) => {
             alert("That user does not yet exist")
-            document.getElementById("firstName").innerHTML = "";
-                document.getElementById("lastName").innerHTML = "";
-                document.getElementById("userName").innerHTML = "";
+            document.getElementById("firstname").innerHTML = "";
+                document.getElementById("lastname").innerHTML = "";
+                document.getElementById("username").innerHTML = "";
         });
     }
-    function UserName(userName){
-        fetch('users.php?id=' + userName)
+    function TheUserName(username){
+        fetch('users.php?username=' + username)
         .then(response => response.json())
         .then(
 
             function (data){
-                document.getElementById("firstName").innerHTML = data.first_name;
-                document.getElementById("lastName").innerHTML = data.last_name;
-                document.getElementById("userName").innerHTML = data.username;
+                document.getElementById("firstname").innerHTML = data.first_name;
+                document.getElementById("lastname").innerHTML = data.last_name;
+                document.getElementById("username").innerHTML = data.username;
             }
 
         ).catch((error) => {
             alert("That user does not yet exist")
-            document.getElementById("firstName").innerHTML = "";
-                document.getElementById("lastName").innerHTML = "";
-                document.getElementById("userName").innerHTML = "";
+            document.getElementById("firstname").innerHTML = "";
+                document.getElementById("lastname").innerHTML = "";
+                document.getElementById("username").innerHTML = "";
         });
     }
 </script>
