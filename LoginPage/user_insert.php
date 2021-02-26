@@ -18,5 +18,4 @@ $stmt = $con->prepare("INSERT INTO cs3620_proj.user (`username`,
 
     $stmt->close();
     $con->close();
-    header('Location: login.php');
 ?>
