@@ -41,8 +41,8 @@
     </nav>
 <form method="POST" action="./user_insert.php">
     Username:<input class="input is-normal" type="text" name="username" placeholder="username@email.com" /><br />
-    First Name:<input class="input is-normal" type="text" name="firstName" placeholder="firstname" /><br />
-    Last Name:<input class="input is-normal" type="text" name="lastName" placeholder="lastname" /><br />
+    First Name:<input class="input is-normal" type="text" name="first_name" placeholder="firstname" /><br />
+    Last Name:<input class="input is-normal" type="text" name="last_name" placeholder="lastname" /><br />
     Password:<input class="input is-normal" type="password" name="password" placeholder="*****" /><br /><br />
     <input class="button" type="submit" value="Create User" />
 </form>

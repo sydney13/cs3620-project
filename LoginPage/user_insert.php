@@ -9,8 +9,8 @@ $stmt = $con->prepare("INSERT INTO cs3620_proj.user (`username`,
     `last_name`) VALUES (?, ?, ?, ?)");
 
     $un = $_POST["username"];
-    $fn = $_POST["firstName"];
-    $ln = $_POST["lastName"];
+    $fn = $_POST["first_name"];
+    $ln = $_POST["last_name"];
     $pw = hash("sha256", trim($_POST['password']));
 
     $stmt->bind_param('ssss', $un, $pw, $fn, $ln);
