@@ -31,9 +31,6 @@
                 echo "Incorrect username or password";
             }
         }
-        else {
-            echo "Incorrect username or password";
-        }
         $stmt->close();
     }
 ?>
