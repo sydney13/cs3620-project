@@ -10,7 +10,7 @@
         ini_set('display_startup_errors', 1);
         error_reporting(E_ALL);
 
-        require_once('./show/show.php');
+        require_once('show.php');
 
         $show = new show();
         $shows = $show->getMyShows();  
