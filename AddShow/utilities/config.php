@@ -1,13 +1,15 @@
 <?php
-$servername = "cs3620.mysql.database.azure.com";
-$username = (isset($_SESSION["SQLUSER"]) ? $_SESSION["SQLUSER"] : $_ENV['SQLUSER']);
-$password = (isset($_SESSION["SQLPW"]) ? $_SESSION["SQLPW"] : $_ENV['SQLPW']);
-$dbname = "cs3620_proj";
+require 'setenv.php';
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-} 
+
+$SERVER_NAME = 'cs3620.mysql.database.azure.com';
+$DATABASE_USER = $_SESSION['SQLUSER'];
+$DATABASE_PASS = $_SESSION['SQLPW'];
+$DATABASE_NAME = 'cs3620_proj';
+
+$con = mysqli_connect($SERVER_NAME, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+if(mysqli_connect_errno()) {
+  exit('Failed to connect to MySQL: ' . mysqli_connect_error());
+}
+
 ?>

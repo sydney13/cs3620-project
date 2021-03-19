@@ -4,7 +4,7 @@ class ShowDAO {
         require('./utilities/config.php');
         require_once('./show/show.php');
 
-        $sql = "SELECT show_id, show_name, show_rating, releasedate FROM cs3620_project1.tvshows";
+        $sql = "SELECT show_id, show_name, show_description, show_rating FROM cs3620_proj.shows";
         $result = $con->query($sql);
 
         $shows;
@@ -30,7 +30,7 @@ class ShowDAO {
     }
 
     function getShow($input) {
-        require('./utilities/connection.php');
+        require('./utilities/config.php');
         require_once('./show/show.php');
 
         $sql = "SELECT show_id, show_name, show_description, show_rating FROM cs3620_proj.shows WHERE show_id = ?";
@@ -61,11 +61,11 @@ class ShowDAO {
         return $shows;
     }
 
-    function getShowsByUserId($show_user_id) {
-        require('./utilities/connection.php');
+    function getShowsByUserId($user_id) {
+        require('./utilities/config.php');
         require_once('./show/show.php');
 
-        $sql = "SELECT show_id, show_name, show_description, show_rating FROM cs3620_proj.shows WHERE show_id = " . $show_user_id;
+        $sql = "SELECT show_id, show_name, show_description, show_rating FROM cs3620_proj.shows WHERE user_id = " . $user_id;
         $result = $con->query($sql);
 
         $shows;
@@ -91,8 +91,8 @@ class ShowDAO {
     }
 
     function deleteShow($ushow_id, $sshow_id){
-        require('./utilities/connection.php');
-        $sql = "DELETE FROM cs3620_proj.shows WHERE user_show_id = " . $ushow_id . " AND show_id = " . $sshow_id . ";";
+        require('./utilities/config.php');
+        $sql = "DELETE FROM cs3620_proj.shows WHERE user_id = " . $ushow_id . " AND show_id = " . $sshow_id . ";";
 
         if($con->query($sql) === TRUE) {
             echo "user deleted";

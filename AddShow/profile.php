@@ -34,7 +34,7 @@ if(!isset($_SESSION['loggedin'])){
                 <div class="navbar-end">
                     <div class="navbar-item">
                         <div class="buttons">
-                        <a href="movie_insert_form.php" class="button is-success">
+                        <a href="show_insert_form.php" class="button is-success">
                                 <span class="icon"><i class="fas fa-user"></i></span>
                                 <span>Add New Show</span>
                             </a>

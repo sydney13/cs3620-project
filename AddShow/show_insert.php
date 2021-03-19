@@ -1,17 +1,20 @@
 <?php
 
+    session_start();
+
     require 'setenv.php';
     require './utilities/config.php';
 
 $stmt = $con->prepare("INSERT INTO cs3620_proj.shows (`show_name`,
     `show_description`,
-    `show_rating`) VALUES (?, ?, ?)");
+    `show_rating`, `user_id`) VALUES (?, ?, ?)");
 
     $sn = $_POST["show_name"];
     $sd = $_POST["show_description"];
     $sr = $_POST["show_rating"];
+    $userid = $_SESSION["user_id"];
 
-    $stmt->bind_param('sss', $sn, $sd, $sr);
+    $stmt->bind_param('sss', $sn, $sd, $sr, $userid);
     $stmt->execute();
 
     $stmt->close();

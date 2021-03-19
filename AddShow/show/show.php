@@ -34,9 +34,9 @@ class Show implements \JsonSerializable {
     function setShowRating($show_rating){
         $this->show_rating = $show_rating;
     }
-    public function getMyShows($show_user_id){
+    public function getMyShows($user_id){
         $showDAO = new showDAO();
-        return $showDAO->getShowsByUserId($show_user_id);
+        return $showDAO->getShowsByUserId($user_id);
     }
     public function deleteShow($user_id, $id) {
         $showDAO = new showDAO();
@@ -53,27 +53,5 @@ class Show implements \JsonSerializable {
     }
 }
 ?>
-
-
-public function getMyTvshows($user_id) {
-            $showDAO = new showDAO();
-            return $showDAO->getShowsByUserId($user_id);
-        }
-
-        public function deleteShow($user_id, $id) {
-          $showDAO = new showDAO();
-          return $showDAO->deleteShow($user_id, $id);
-      }
-
-        public function getTvshow($input) {
-          $showDAO = new showDAO();
-          return $showDAO->getTvshow($input);
-      }
-      
-        public function jsonSerialize(){
-            $vars = get_object_vars($this);
-            return $vars;
-        }
-    }
 
  

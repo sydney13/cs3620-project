@@ -52,7 +52,7 @@ require 'setenv.php';
     require_once('./show/show.php');
 
     $show = new show();
-    $shows = $show->getShow($_GET["id"]);
+    $shows = $show->getShow($_GET["show_id"]);
 
 
 
