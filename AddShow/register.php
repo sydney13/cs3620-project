@@ -40,9 +40,9 @@
         </div>
     </nav>
 <form method="POST" action="./user_insert.php" >
-    Username:<input class="input is-normal" type="text" name="username" placeholder="Title" /><br />
-    First Name:<input class="input is-normal" type="text" name="firstName" placeholder="John" /><br />
-    Last Name:<input class="input is-normal" type="text" name="lastName" placeholder="Doe" /><br />
+    Username:<input class="input is-normal" type="text" name="username" placeholder="Username" /><br />
+    First Name:<input class="input is-normal" type="text" name="firstName" placeholder="First Name" /><br />
+    Last Name:<input class="input is-normal" type="text" name="lastName" placeholder="Last Name" /><br />
     Password:<input class="input is-normal" type="password" name="password" placeholder="*****" /><br /><br />
     <input class="button is-info" type="submit" value="Create User" />
 </form>

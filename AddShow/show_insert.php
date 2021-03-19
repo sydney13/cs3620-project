@@ -2,8 +2,8 @@
 
     session_start();
 
-    require 'setenv.php';
     require './utilities/config.php';
+    require 'setenv.php';
 
 $stmt = $con->prepare("INSERT INTO cs3620_proj.shows (`show_name`,
     `show_description`,

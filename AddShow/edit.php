@@ -4,7 +4,7 @@
 <nav class="navbar is-light">
         <div class="container">
             <div class="navbar-brand">
-                <a class="navbar-item" href="login.html">
+                <a class="navbar-item" href="login.php">
                     <span class="icon is-large">
                 <i class="fas fa-home"></i>
               </span>
@@ -60,9 +60,9 @@ require 'setenv.php';
         echo '<div class="card">
                 <div class="card-content">
                 <form method="POST" action="./user_update.php" >
-                Title:<input class="input is-normal" type="text" name="show_name" placeholder="Name" value="' . $shows[0]->getShowName() . '" /><br />
-                Creator:<input class="input is-normal" type="text" name="show_description" placeholder="About....." value="' . $shows[0]->getShowDescription() . '"/><br />
-                Release Date:<input class="input is-normal" type="text" name="show_rating" placeholder="5 stars" value="' . $shows[0]->getShowRating() . '"/><br />
+                Name:<input class="input is-normal" type="text" name="show_name" placeholder="Name" value="' . $shows[0]->getShowName() . '" /><br />
+                Description:<input class="input is-normal" type="text" name="show_description" placeholder="About....." value="' . $shows[0]->getShowDescription() . '"/><br />
+                Rating:<input class="input is-normal" type="text" name="show_rating" placeholder="5 stars" value="' . $shows[0]->getShowRating() . '"/><br />
                 <input type="hidden" name="id" placeholder="1" value="' . $shows[0]->getShowId() . '"/>
                 <input class="button" type="submit" value="Save" />
                 </form>
