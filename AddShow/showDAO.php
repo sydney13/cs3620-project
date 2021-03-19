@@ -87,7 +87,7 @@ class ShowDAO {
 
         $con->close();
 
-        return $shows;
+        return $show;
     }
 
     function deleteShow($ushow_id, $sshow_id){
