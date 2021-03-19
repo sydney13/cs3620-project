@@ -38,7 +38,7 @@
         </div>
     </nav>
 
-<form method="POST" action="./movie_insert.php" >
+<form method="POST" action="./show_insert.php" >
     <br> Add New Show <br>
     Name:<input class="input is-normal" type="text" name="show_name" placeholder="Name" /><br />
     Description:<input class="input is-normal" type="text" name="show_description" placeholder="This show is about..." /><br />
