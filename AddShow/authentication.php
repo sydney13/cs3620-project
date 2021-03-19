@@ -25,7 +25,7 @@
                 session_regenerate_id();
                 $_SESSION['loggedin'] = TRUE;
                 $_SESSION['name'] = $_POST['username'];
-                $_SESSION['user_id'] = $show_id;
+                $_SESSION['user_id'] = $id;
 
                 header('Location: profile.php');
                 
